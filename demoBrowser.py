@@ -16,5 +16,6 @@ driver.refresh()
 driver.forward()
 driver.close()
 
+##############
 
 #jak zpracovat statické rozbalovací nabídky pomocí selenium python
