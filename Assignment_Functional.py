@@ -6,7 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-expectedList = ['Cucumber - 1 Kg', 'Rspberry - 1/4 Kg', 'Strawberry - 1/4 Kg']
+expectedList = ['Cucumber - 1 Kg', 'Raspberry - 1/4 Kg', 'Strawberry - 1/4 Kg']
+actualList = []
 
 service_obj = Service(executable_path="/Users/veronikaobrtelova/Downloads/chromedriver-mac-arm64/chromedriver")
 driver = webdriver.Chrome(service=service_obj)
@@ -16,15 +17,14 @@ driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
 time.sleep(4)
 
-
-
-
 results = driver.find_elements(By.XPATH, "//div[@class= 'products']/div")
 count = len(results)
 assert count > 0
 for result in results:
-    result.find_element(By.XPATH, "h4").text
+    actualList.append(result.find_element(By.XPATH, "h4").text)
     result.find_element(By.XPATH, "div/button").click()
+
+assert expectedList == actualList
 
 driver.find_element(By.CSS_SELECTOR, "img[alt='Cart']").click()
 driver.find_element(By.XPATH,"//button[text()='PROCEED TO CHECKOUT']").click()
@@ -36,7 +36,7 @@ for price in prices:
     sum = sum + int(price.text)
 
 print(sum)
-totalAmount = int(driver.find_element(By.CSS_SELECTOR, ".totAmt").text) #celková částka
+totalAmount = int(driver.find_element(By.CSS_SELECTOR, ".totAmt").text)     #celková částka
 
 assert sum == totalAmount
 
@@ -45,3 +45,7 @@ driver.find_element(By.CSS_SELECTOR,".promoBtn").click()
 wait = WebDriverWait(driver, 10)
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, ".promoInfo"))) #dokud se viditelnost tohoto prvku nenachází na stránce
 print(driver.find_element(By.CLASS_NAME,"promoInfo").text)
+
+discountedAmount = float(driver.find_element(By.CSS_SELECTOR,".discountAmt").text)
+
+assert totalAmount > discountedAmount
