@@ -12,7 +12,7 @@ def test_firstProgram():
 def test_SecondCreditCard():
     a = 4
     b = 6
-    assert a+2 == 6, "Addition do not match"
+    assert a+2 == 6, ("Addition do not match")
 
 def test_fixtureDemo(setup):
     print("i will execute steps in fixtureDemo method")
