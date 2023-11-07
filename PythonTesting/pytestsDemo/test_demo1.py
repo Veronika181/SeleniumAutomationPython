@@ -6,18 +6,27 @@
 #můžete spustit konkrétní soubor pomocí py.test <název souboru>
 #můžete označit tag testy @pytest.mark.smoke a běh pomocí -m
 #můžete přeskočit testy s @pytest.mark.skip
+#příslušenství se používají jako metody nastavení a odstranění pro soubor test case-conftest ke zobecnění
+#příslušenství a zpřístupnit je všem testovacím případům
+#datadriven a parametrizaci lze provést pomocí příkazů return ve formátu n-tice
+#když definujete rozsah zařízení pro třídu, spustí se pouze jednou před zahájením třídy a na konci
+
+# Any pytest file should start with test_ or end with _test
+#pytest method names should start with test
+#Any code should be wrapped in method only
 import pytest
-@pytest.fixture()
-def setup():
-    print("I will be executing first")
-    yield
-    print("I will executed last")
+
+
 
 @pytest.mark.smoke
 def test_firstProgram(setup):
-   print("Hello")
+    print("Hello")
+
 
 @pytest.mark.xfail
 def test_SecondGreetCreditCard():
     print("Good Morning")
 
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser[1])
