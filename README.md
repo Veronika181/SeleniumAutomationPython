@@ -1,11 +1,14 @@
 # SeleniumAutomationPython
-Kurz Selenium WebDriver s Pythonem + Frameworks od Rahula Shettyho na Udemy:
+Selenium Automation with Python
 
-Na kurzu jsem se naučila:
--Automatizaci s Pythonem a Selenium:Implementace automatizace testů pomocí Selenium WebDriver a Pythonu.
--Vytváření Testovacích Frameworků:Naučila jsem se zakládat testovací frameworky s nejnovějšími technologiemi.
--Získala jsem základ v Pythonu s praktickými příklady.
--PyTest a Jednotkové Testy:Seznámila jsem se s PyTest pro jednotkové a integrační testování.
--Práce se Selenium Python API:Získala jsem dovednosti v práci s metodami API Selenium Pythonu.
--Návrh Testovacího Frameworku:Získala jsem schopnost navrhovat strukturu testovacího frameworku.
--Logování :Získala jsem schopnost integrovat logování pro lepší sledování průběhu testů.
+Course: Selenium WebDriver with Python + Frameworks by Rahul Shetty on Udemy:
+
+In this course, I learned:
+
+Automation with Python and Selenium: Implementing test automation using Selenium WebDriver and Python.
+Creating Testing Frameworks: Learned to establish testing frameworks with the latest technologies.
+Gained a foundation in Python with practical examples.
+PyTest and Unit Testing: Introduced to PyTest for unit and integration testing.
+Working with Selenium Python API: Acquired skills in working with Selenium Python API methods.
+Test Framework Design: Developed the ability to design the structure of a testing framework.
+Logging: Acquired the ability to integrate logging for better monitoring of test progress.
